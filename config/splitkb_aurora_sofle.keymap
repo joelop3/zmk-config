@@ -17,6 +17,19 @@
  */
 
 / {
+    behaviors {
+        kp2mo: kp2mo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "KP2MO";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <57>;
+            tapping-term-ms = <100>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -29,11 +42,11 @@
             //               |CTRL | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   | RALT |
 
             bindings = <
-&kp MINUS      &kp N1  &kp N2    &kp N3      &kp N4  &kp N5                                     &kp N6  &kp N7     &kp N8      &kp N9    &kp N0    &kp EQUAL
-&kp LBKT       &kp Q   &kp W     &kp E       &kp R   &kp T                                      &kp Y   &kp U      &kp I       &kp O     &kp P     &kp BACKSPACE
-&kp BACKSLASH  &kp A   &kp S     &kp D       &kp F   &kp G                                      &kp H   &kp J      &kp K       &kp L     &kp SEMI  &kp SQT
-&kp LEFT_META  &kp Z   &kp X     &kp C       &kp V   &kp B      &bl BL_TOG       &bl BL_CYCLE   &kp N   &kp M      &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT
-                       &kp LALT  &kp LSHIFT  &mo 2   &kp LCTRL  &kp BACKSPACE    &kp BACKSPACE  &mo 1   &kp SPACE  &kp RSHIFT  &kp RALT
+&kp ESC        &kp N1  &kp N2    &kp N3     &kp N4  &kp N5                                 &kp N6  &kp N7          &kp N8      &kp N9    &kp N0    &kp EQUAL
+&kp TAB        &kp Q   &kp W     &kp E      &kp R   &kp T                                  &kp Y   &kp U           &kp I       &kp O     &kp P     &kp BACKSPACE
+&kp BACKSLASH  &kp A   &kp S     &kp D      &kp F   &kp G                                  &kp H   &kp J           &kp K       &kp L     &kp SEMI  &kp SQT
+&kp LSHIFT     &kp Z   &kp X     &kp C      &kp V   &kp B      &bl BL_TOG    &bl BL_CYCLE  &kp N   &kp M           &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT
+                       &kp LALT  &kp LMETA  &mo 2   &kp LCTRL  &gresc        &kp ENTER     &mo 1   &kp2mo 1 SPACE  &kp RSHIFT  &kp RALT
             >;
 
             sensor-bindings =
@@ -67,7 +80,7 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp ESC  &trans  &trans  &trans  &trans  &trans                               &trans      &trans     &trans        &trans     &trans  &trans
+&kp ESC  &trans  &trans  &trans  &trans  &trans                               &trans      &trans     &trans        &trans     &trans  &kp MINUS
 &trans   &trans  &trans  &trans  &trans  &trans                               &trans      &trans     &kp UP_ARROW  &trans     &trans  &trans
 &trans   &trans  &trans  &trans  &trans  &trans                               &trans      &kp LEFT   &kp DOWN      &kp RIGHT  &trans  &kp GRAVE
 &trans   &trans  &trans  &trans  &trans  &trans  &trans    &trans             &kp RA(N)   &trans     &trans        &trans     &trans  &trans
