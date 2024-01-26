@@ -67,11 +67,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                               &trans      &trans     &trans        &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                               &trans      &trans     &kp UP_ARROW  &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                               &trans      &kp LEFT   &kp DOWN      &kp RIGHT  &trans  &kp GRAVE
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans             &kp RA(N)   &trans     &trans        &trans     &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &kp LC(BACKSPACE)  &kp DELETE  &kp ENTER  &trans        &trans
+&kp ESC  &trans  &trans  &trans  &trans  &trans                               &trans      &trans     &trans        &trans     &trans  &trans
+&trans   &trans  &trans  &trans  &trans  &trans                               &trans      &trans     &kp UP_ARROW  &trans     &trans  &trans
+&trans   &trans  &trans  &trans  &trans  &trans                               &trans      &kp LEFT   &kp DOWN      &kp RIGHT  &trans  &kp GRAVE
+&trans   &trans  &trans  &trans  &trans  &trans  &trans    &trans             &kp RA(N)   &trans     &trans        &trans     &trans  &trans
+                 &trans  &trans  &trans  &trans  &trans    &kp LC(BACKSPACE)  &kp DELETE  &kp ENTER  &trans        &trans
             >;
         };
     };
