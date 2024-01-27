@@ -80,11 +80,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp ESC  &trans  &trans            &trans                &trans          &trans                       &trans      &trans     &trans        &trans     &trans  &kp MINUS
-&trans   &trans  &trans            &trans                &trans          &trans                       &trans      &trans     &kp UP_ARROW  &trans     &trans  &trans
-&trans   &trans  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE  &kp MINUS                    &kp EQUAL   &kp LEFT   &kp DOWN      &kp RIGHT  &trans  &kp GRAVE
-&trans   &trans  &trans            &trans                &kp LESS_THAN   &kp SLASH  &trans    &trans  &kp RA(N)   &trans     &trans        &trans     &trans  &trans
-                 &trans            &trans                &trans          &trans     &trans    &trans  &kp DELETE  &kp ENTER  &trans        &trans
+&kp ESC  &trans  &trans            &trans                &trans          &trans                       &trans     &trans     &trans        &trans     &trans  &kp MINUS
+&trans   &trans  &trans            &trans                &trans          &trans                       &trans     &trans     &kp UP_ARROW  &trans     &trans  &trans
+&trans   &trans  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE  &kp MINUS                    &kp EQUAL  &kp LEFT   &kp DOWN      &kp RIGHT  &trans  &kp GRAVE
+&trans   &trans  &trans            &trans                &kp LESS_THAN   &kp SLASH  &trans    &trans  &kp RA(N)  &trans     &trans        &trans     &trans  &trans
+                 &trans            &trans                &trans          &trans     &trans    &trans  &trans     &kp ENTER  &trans        &trans
             >;
         };
     };
