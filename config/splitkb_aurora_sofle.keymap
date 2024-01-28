@@ -30,6 +30,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <51 57>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -42,16 +51,16 @@
             //               |CTRL | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   | RALT |
 
             bindings = <
-&kp ESC        &kp N1  &kp N2    &kp N3     &kp N4          &kp N5                                      &kp N6          &kp N7           &kp N8     &kp N9    &kp N0    &kp EQUAL
-&kp TAB        &kp Q   &kp W     &kp E      &kp R           &kp T                                       &kp Y           &kp U            &kp I      &kp O     &kp P     &kp BACKSPACE
-&kp BACKSLASH  &kp A   &kp S     &kp D      &kp F           &kp G                                       &kp H           &kp J            &kp K      &kp L     &kp SEMI  &kp SQT
-&kp DELETE     &kp Z   &kp X     &kp C      &kp V           &kp B           &bl BL_TOG    &bl BL_CYCLE  &kp N           &kp M            &kp COMMA  &kp DOT   &kp FSLH  &kp ENTER
-                       &kp LALT  &kp LMETA  &kp LEFT_SHIFT  &kp2mo 2 SPACE  &kp LCTRL     &kp RCTRL     &kp2mo 1 SPACE  &kp RIGHT_SHIFT  &kp RMETA  &kp RALT
+&kp ESC        &kp N1  &kp N2    &kp N3     &kp N4          &kp N5                                    &kp N6          &kp N7     &kp N8     &kp N9    &kp N0    &kp EQUAL
+&kp TAB        &kp Q   &kp W     &kp E      &kp R           &kp T                                     &kp Y           &kp U      &kp I      &kp O     &kp P     &kp BACKSPACE
+&kp BACKSLASH  &kp A   &kp S     &kp D      &kp F           &kp G                                     &kp H           &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+&kp DELETE     &kp Z   &kp X     &kp C      &kp V           &kp B           &kp C_MUTE    &bl BL_TOG  &kp N           &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp ENTER
+                       &kp LALT  &kp LMETA  &kp LEFT_SHIFT  &kp2mo 2 SPACE  &kp LCTRL     &kp RCTRL   &kp2mo 1 SPACE  &kp SPACE  &kp RMETA  &kp RALT
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+                <&inc_dec_kp C_VOLUME_DOWN C_VOL_UP>,
+                <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP>;
         };
 
         number {
