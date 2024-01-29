@@ -37,6 +37,26 @@
             tapping-term-ms = <200>;
             bindings = <&kp N>, <&kp RA(N)>;
         };
+
+        braces_left: braces_left {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRACES_LEFT";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_BRACE>,
+                <&kp LEFT_PARENTHESIS>,
+                <&kp LEFT_BRACKET>;
+        };
+
+        braces_right: braces_right {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRACES_RIGHT";
+            #binding-cells = <0>;
+            bindings =
+                <&kp RIGHT_BRACE>,
+                <&kp RIGHT_PARENTHESIS>,
+                <&kp RIGHT_BRACE>;
+        };
     };
 
     combos {
@@ -86,11 +106,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp F1     &kp F2  &kp F3    &kp F4                &kp F5          &kp F6                       &kp F7     &kp F8            &kp F9                 &kp F10          &kp F11  &kp F12
-&kp UNDER  &kp N1  &kp N2    &kp N3                &kp N4          &kp N5                       &kp N6     &kp N7            &kp N8                 &kp N9           &kp N0   &kp PLUS
-&trans     &trans  &kp LBKT  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE  &kp MINUS                    &kp EQUAL  &kp RIGHT_BRACE   &kp RIGHT_PARENTHESIS  &kp RBKT         &trans   &kp GRAVE
-&trans     &trans  &trans    &trans                &kp LESS_THAN   &kp SLASH  &trans    &trans  &trans     &kp GREATER_THAN  &kp UP_ARROW           &trans           &trans   &trans
-                   &trans    &trans                &trans          &trans     &trans    &trans  &trans     &kp LEFT_ARROW    &kp DOWN_ARROW         &kp RIGHT_ARROW
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5         &kp F6                       &kp F7            &kp F8          &kp F9          &kp F10          &kp F11  &kp F12
+&trans  &kp N1  &kp N2  &kp N3  &kp N4         &kp N5                       &kp N6            &kp N7          &kp N8          &kp N9           &kp N0   &kp LS(BACKSPACE)
+&trans  &trans  &trans  &trans  &braces_left   &kp MINUS                    &kp PLUS          &braces_right   &kp UP_ARROW    &trans           &trans   &kp GRAVE
+&trans  &trans  &trans  &trans  &kp LESS_THAN  &kp SLASH  &trans    &trans  &kp GREATER_THAN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans   &trans
+                &trans  &trans  &trans         &trans     &trans    &trans  &trans            &trans          &trans          &trans
             >;
         };
 
