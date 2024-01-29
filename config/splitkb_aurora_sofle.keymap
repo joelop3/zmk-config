@@ -29,6 +29,14 @@
             quick-tap-ms = <150>;
             retro-tap;
         };
+
+        enhe_doubleclick: enhe_doubleclick {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ENHE_DOUBLECLICK";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N>, <&kp RA(N)>;
+        };
     };
 
     combos {
@@ -37,6 +45,11 @@
         enter {
             bindings = <&kp ENTER>;
             key-positions = <51 57>;
+        };
+
+        gaming_mode {
+            bindings = <&tog 2>;
+            key-positions = <42 43>;
         };
     };
 
@@ -52,11 +65,11 @@
             //               |CTRL | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   | RALT |
 
             bindings = <
-&kp ESC        &kp N1  &kp N2    &kp N3     &kp N4          &kp N5                                    &kp N6          &kp N7     &kp N8     &kp N9    &kp N0    &kp EQUAL
-&kp TAB        &kp Q   &kp W     &kp E      &kp R           &kp T                                     &kp Y           &kp U      &kp I      &kp O     &kp P     &kp BACKSPACE
-&kp BACKSLASH  &kp A   &kp S     &kp D      &kp F           &kp G                                     &kp H           &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-&kp DELETE     &kp Z   &kp X     &kp C      &kp V           &kp B           &kp C_MUTE    &bl BL_TOG  &kp N           &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp ENTER
-                       &kp LALT  &kp LMETA  &kp LEFT_SHIFT  &kp2mo 1 SPACE  &kp LCTRL     &kp RCTRL   &kp2mo 1 SPACE  &kp SPACE  &kp RMETA  &kp RALT
+&kp ESC        &kp N1  &kp N2    &kp N3     &kp N4          &kp N5                                    &kp N6             &kp N7     &kp N8     &kp N9    &kp N0    &kp EQUAL
+&kp TAB        &kp Q   &kp W     &kp E      &kp R           &kp T                                     &kp Y              &kp U      &kp I      &kp O     &kp P     &kp BACKSPACE
+&kp BACKSLASH  &kp A   &kp S     &kp D      &kp F           &kp G                                     &kp H              &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+&kp DELETE     &kp Z   &kp X     &kp C      &kp V           &kp B           &kp C_MUTE    &bl BL_TOG  &enhe_doubleclick  &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp ENTER
+                       &kp LALT  &kp LMETA  &kp LEFT_SHIFT  &kp2mo 1 SPACE  &kp LCTRL     &kp RCTRL   &kp2mo 1 SPACE     &kp SPACE  &kp RMETA  &kp RALT
             >;
 
             sensor-bindings =
@@ -76,8 +89,18 @@
 &kp F1     &kp F2  &kp F3    &kp F4                &kp F5          &kp F6                       &kp F7     &kp F8            &kp F9                 &kp F10          &kp F11  &kp F12
 &kp UNDER  &kp N1  &kp N2    &kp N3                &kp N4          &kp N5                       &kp N6     &kp N7            &kp N8                 &kp N9           &kp N0   &kp PLUS
 &trans     &trans  &kp LBKT  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE  &kp MINUS                    &kp EQUAL  &kp RIGHT_BRACE   &kp RIGHT_PARENTHESIS  &kp RBKT         &trans   &kp GRAVE
-&trans     &trans  &trans    &trans                &kp LESS_THAN   &kp SLASH  &trans    &trans  &kp RA(N)  &kp GREATER_THAN  &kp UP_ARROW           &trans           &trans   &trans
+&trans     &trans  &trans    &trans                &kp LESS_THAN   &kp SLASH  &trans    &trans  &trans     &kp GREATER_THAN  &kp UP_ARROW           &trans           &trans   &trans
                    &trans    &trans                &trans          &trans     &trans    &trans  &trans     &kp LEFT_ARROW    &kp DOWN_ARROW         &kp RIGHT_ARROW
+            >;
+        };
+
+        gaming {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &kp SPACE  &kp Y   &trans    &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
