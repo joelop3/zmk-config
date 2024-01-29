@@ -65,12 +65,17 @@
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <51 57>;
+            key-positions = <57 52>;
         };
 
         gaming_mode {
             bindings = <&tog 2>;
             key-positions = <42 43>;
+        };
+
+        enter2 {
+            bindings = <&kp ENTER>;
+            key-positions = <57 53>;
         };
     };
 
