@@ -15,6 +15,10 @@
     // chain-length = <29>; // Uncomment if using only per-key LEDs.
 };
 
+&sensors {
+    triggers-per-rotation = <28>;
+};
+
 / {
     behaviors {
         kp2mo: kp2mo {
