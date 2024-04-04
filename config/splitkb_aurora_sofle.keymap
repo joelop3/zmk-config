@@ -21,7 +21,6 @@
     behaviors {
         kp2mo: kp2mo {
             compatible = "zmk,behavior-hold-tap";
-            label = "KP2MO";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -32,7 +31,6 @@
 
         enhe_doubleclick: enhe_doubleclick {
             compatible = "zmk,behavior-tap-dance";
-            label = "ENHE_DOUBLECLICK";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp N>, <&kp RA(N)>;
@@ -40,7 +38,6 @@
 
         braces_left: braces_left {
             compatible = "zmk,behavior-tap-dance";
-            label = "BRACES_LEFT";
             #binding-cells = <0>;
             bindings =
                 <&kp LEFT_BRACE>,
@@ -50,7 +47,6 @@
 
         braces_right: braces_right {
             compatible = "zmk,behavior-tap-dance";
-            label = "BRACES_RIGHT";
             #binding-cells = <0>;
             bindings =
                 <&kp RIGHT_BRACE>,
