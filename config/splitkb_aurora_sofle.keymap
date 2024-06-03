@@ -85,9 +85,9 @@
             bindings = <
 &kp F1     &kp F2           &kp F3       &kp F4    &kp F5      &kp F6                                                      &kp F7     &kp F8         &kp F9        &kp F10               &kp F11                &kp F12
 &kp MINUS  &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT                                                 &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS
-&kp        &kp N1           &kp N2       &kp N3    &kp N4      &kp N5                                                      &kp N6     &kp N7         &kp N8        &kp N9                &kp N0                 &kp GRAVE
-&kp        &kp              &kp          &kp       &kp         &kp          &kp                     &kp                    &kp        &kp            &kp           &kp                   &kp BACKSLASH          &kp
-                            &kp          &kp       &kp         &kp          &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp        &kp            &kp           &kp
+&trans     &kp N1           &kp N2       &kp N3    &kp N4      &kp N5                                                      &kp N6     &kp N7         &kp N8        &kp N9                &kp N0                 &kp GRAVE
+&trans     &trans           &trans       &trans    &trans      &trans       &trans                  &trans                 &trans     &trans         &trans        &trans                &kp BACKSLASH          &trans
+                            &trans       &trans    &trans      &trans       &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans     &trans         &trans        &trans
             >;
         };
 
