@@ -45,6 +45,18 @@
             label = "TO2KP";
             hold-while-undecided;
         };
+
+        homeRow_behavior: homeRow_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_BEHAVIOR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <200>;
+            retro-tap;
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -54,11 +66,11 @@
 
         main {
             bindings = <
-&kp ESC    &kp N1  &kp N2        &kp N3    &kp N4     &kp N5                                                    &kp N6          &kp N7  &kp N8     &kp N9     &kp N0    &kp GRAVE
-&kp MINUS  &kp Q   &kp W         &kp E     &kp R      &kp T                                                     &kp Y           &kp U   &kp I      &kp O      &kp P     &kp BSPC
-&kp TAB    &kp A   &kp S         &kp D     &kp F      &kp G                                                     &kp H           &kp J   &kp K      &kp L      &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X         &kp C     &kp V      &kp B            &kp C_MUTE           &kp CAPSLOCK        &kp N           &kp M   &kp COMMA  &kp DOT    &kp FSLH  &kp RSHFT
-                   &kp LEFT_WIN  &kp LALT  &kp SPACE  &mt RCTRL ENTER  &to2kp LEFT_GUI 3    &to2kp RIGHT_GUI 3  &kp2mo 1 SPACE  &mo 2   &kp RALT   &kp RCTRL
+&kp ESC    &kp N1                        &kp N2                        &kp N3                      &kp N4                     &kp N5                                                    &kp N6          &kp N7                     &kp N8                      &kp N9                     &kp N0                           &kp GRAVE
+&kp MINUS  &kp Q                         &kp W                         &kp E                       &kp R                      &kp T                                                     &kp Y           &kp U                      &kp I                       &kp O                      &kp P                            &kp BSPC
+&kp TAB    &homeRow_behavior LEFT_WIN A  &homeRow_behavior LEFT_ALT S  &homeRow_behavior LSHIFT D  &homeRow_behavior LCTRL F  &kp G                                                     &kp H           &homeRow_behavior LCTRL J  &homeRow_behavior LSHIFT K  &homeRow_behavior LCTRL L  &homeRow_behavior LEFT_WIN SEMI  &kp SQT
+&kp LSHFT  &kp Z                         &kp X                         &kp C                       &kp V                      &kp B            &kp C_MUTE           &kp CAPSLOCK        &kp N           &kp M                      &kp COMMA                   &kp DOT                    &kp FSLH                         &kp RSHFT
+                                         &kp LEFT_WIN                  &kp LALT                    &kp SPACE                  &mt RCTRL ENTER  &to2kp LEFT_GUI 3    &to2kp RIGHT_GUI 3  &kp2mo 1 SPACE  &mo 2                      &kp RALT                    &kp RCTRL
             >;
 
             sensor-bindings =
@@ -68,21 +80,21 @@
 
         nav {
             bindings = <
-&trans       &trans     &trans      &trans        &trans        &trans                    &trans     &trans       &trans     &trans     &trans         &trans
-&trans       &trans     &trans      &trans        &trans        &trans                    &kp PG_UP  &kp HOME     &kp UP     &kp END    &kp SYSREQ     &trans
-&kp LS(TAB)  &kp LCTRL  &kp LSHIFT  &kp LEFT_ALT  &kp LEFT_WIN  &trans                    &kp PG_DN  &kp LEFT     &kp DOWN   &kp RIGHT  &kp DEL        &kp BSPC
-&trans       &trans     &trans      &trans        &trans        &trans  &trans    &trans  &trans     &kp LS(TAB)  &kp ENTER  &kp TAB    &kp BACKSLASH  &trans
-                        &trans      &trans        &trans        &trans  &trans    &trans  &trans     &trans       &trans     &trans
+&trans       &trans        &trans        &trans      &trans     &trans                    &trans     &trans       &trans     &trans     &trans         &trans
+&trans       &trans        &trans        &trans      &trans     &trans                    &kp PG_UP  &kp HOME     &kp UP     &kp END    &kp SYSREQ     &trans
+&kp LS(TAB)  &kp LEFT_WIN  &kp LEFT_ALT  &kp LSHIFT  &kp LCTRL  &trans                    &kp PG_DN  &kp LEFT     &kp DOWN   &kp RIGHT  &kp DEL        &kp BSPC
+&trans       &trans        &trans        &trans      &trans     &trans  &trans    &trans  &trans     &kp LS(TAB)  &kp ENTER  &kp TAB    &kp BACKSLASH  &trans
+                           &trans        &trans      &trans     &trans  &trans    &trans  &trans     &trans       &trans     &trans
             >;
         };
 
         symbols {
             bindings = <
-&trans     &trans            &trans             &trans                &trans                 &trans                         &trans         &trans         &trans        &trans     &trans  &trans
-&kp MINUS  &kp EXCL          &kp AT             &kp HASH              &kp DOLLAR             &kp PERCENT                    &kp CARET      &kp AMPERSAND  &kp ASTERISK  &trans     &trans  &trans
-&trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans                         &kp BACKSLASH  &kp MINUS      &kp PLUS      &kp EQUAL  &trans  &trans
-&trans     &kp LESS_THAN     &kp GREATER_THAN   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans       &trans    &trans  &trans         &trans         &trans        &trans     &trans  &trans
-                             &trans             &trans                &trans                 &trans       &trans    &trans  &trans         &trans         &trans        &trans
+&trans  &trans                &trans                 &trans            &trans             &trans                         &trans     &trans         &trans        &trans         &trans     &trans
+&trans  &kp EXCL              &kp AT                 &kp HASH          &kp DOLLAR         &kp PERCENT                    &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp BACKSLASH  &kp GRAVE  &trans
+&trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp PLUS                       &kp EQUAL  &trans         &trans        &trans         &trans     &trans
+&trans  &kp LESS_THAN         &kp GREATER_THAN       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS    &trans    &trans  &trans     &trans         &trans        &trans         &trans     &trans
+                              &trans                 &trans            &trans             &trans       &trans    &trans  &trans     &trans         &trans        &trans
             >;
         };
 
